@@ -1,5 +1,6 @@
 import React from 'react';
 import './AlertForm.css';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 function AlertForm() {
   return (
@@ -11,19 +12,25 @@ function AlertForm() {
           <header className="header">
             <div className="logo">
               <h1>AlertMairie Cameroun</h1>
-              <h3>Votre plateforme de signalementcitoyenne</h3>
+              <h3>Votre plateforme de signalement citoyenne</h3>
             </div>
             </header>
 
-            <nav className='navigation'>
+            <nav className='navigation'> 
               <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#produits">Produits</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="AlertForm.js">Accueil</a></li>
+                
+                <li><a href="services.js">Services</a></li>
                 <li><a href="#signin">Sign In</a></li>
                 <li><a href="#signup">Sign Up</a></li>
               </ul>
             </nav>
+
+            {/* Routeurs */}
+        <Routes>
+          <Route exact path="/" component={() => <div>Accueil</div>} />  {/* Utilisation de Route */}
+          <Route path="/services" component={() => <div>Services</div>} />  {/* Utilisation de Route */}
+        </Routes>
           
     
           {/* Main Content */}
